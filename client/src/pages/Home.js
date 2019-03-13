@@ -30,24 +30,20 @@ class Home extends Component {
   getExamplesAsList = () => {
     const examples = this.state.examples;
 
-    const listElements = examples.map((element) => {
+    const listElements = examples.map(element => {
       return (
         <li key={element._id}>
           <Link to={`/example/${element._id}`}>
-            <p>
-              {element.title}
-            </p>
+            <p>{element.title}</p>
           </Link>
         </li>
       );
     });
 
-    if(listElements.length === 0)
-      return <h3>No Results to Display</h3>;
+    if (listElements.length === 0) return <h3>No Results to Display</h3>;
 
     return <ul>{listElements}</ul>;
-  }
-
+  };
 
   render() {
     const examplesList = this.getExamplesAsList();
