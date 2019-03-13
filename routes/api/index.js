@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const exampleRoutes = require("./example");
-
+const productRoutes = require("./product");
+//todo lo que va a mover mongo de la base de datos va aqui como ruta del get y post
 // Example routes
-router.use("/example", exampleRoutes);
+router.use("/product", productRoutes);
 
 module.exports = router;

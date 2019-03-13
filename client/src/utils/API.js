@@ -2,19 +2,19 @@ import axios from "axios";
 
 export default {
   // Gets all examples
-  getExamples: function() {
-    return axios.get("/api/example");
+  getProducts: function() {
+    return axios.get("/api/product");
   },
   // Gets the example with the given id
-  getExample: function(id) {
-    return axios.get(`/api/example/${id}` );
+  getProduct: function(id) {
+    return axios.get(`/api/product/${id}` );
   },
   // Deletes the example with the given id
-  deleteExample: function(id) {
-    return axios.delete(`/api/example/${id}`);
+  deleteProduct: function(id) {
+    return axios.delete(`/api/product/${id}`);
   },
-  // Saves an example to the database
-  saveExample: function(exampleData) {
-    return axios.post("/api/example", exampleData);
+  // Saves an example to the database, no se de donde viene el saveProduct
+  saveProduct: function(productosData) {
+    return axios.post("/api/product", productosData);
   }
 };

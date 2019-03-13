@@ -1,3 +1,4 @@
+//no se le debe de mover a este archivos
 const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api");

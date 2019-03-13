@@ -1,37 +1,38 @@
-const db = require("../models");
+const db = require("../models"); 
 
 // Defining methods for the exampleController
 module.exports = {
   findAll: function(req, res) {
-    db.Example
+    db.Product
       .find(req.query)
-      .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel))
+      .sort({ name: -1 })
+      //productos es el nombre del parametro 
+      .then(productos => res.json(productos))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.Example
+    db.Product
       .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
+      .then(productos => res.json(productos))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db.Example
+    db.Product
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
+      .then(productos => res.json(productos))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.Example
+    db.Product
       .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
+      .then(productos => res.json(productos))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db.Example
+    db.Product
       .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
+      .then(productos => productos.remove())
+      .then(productos => res.json(productos))
       .catch(err => res.status(422).json(err));
   }
 };
