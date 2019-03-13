@@ -8,18 +8,21 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Products from "./pages/Products";
 
 function App() {
-  return ( 
+  return (
     <Router>
       <>
         <Nav />
         <Switch>
           <Route exact path="/" component={Homes} />
           <Route exact path="/example/:id" component={Example} />
+          <Route exact path="/login" component={About} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/products" component={Products} />
           <Route component={NoMatch} />
         </Switch>
       </>
