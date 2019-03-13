@@ -7,9 +7,14 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      examples: [],
-      title: "",
-      description: ""
+      productos: [],
+      nombre: "",
+      medida: "",
+      precio_unitario: "",
+      fecha_agregado: "",
+      flete: "",
+      fecha_entrega: "",
+      cantidad_disponible: ""
     };
   }
 
@@ -18,9 +23,9 @@ class Home extends Component {
   }
 
   loadExamples = () => {
-    API.getExamples()
+    API.getProducts()
       .then(res => {
-        this.setState({ examples: res.data, title: "", description: "" });
+        this.setState({ productos: res.data });
       })
       .catch(err => {
         console.log(err);
@@ -28,13 +33,20 @@ class Home extends Component {
   };
 
   getExamplesAsList = () => {
-    const examples = this.state.examples;
-
-    const listElements = examples.map(element => {
+    const productos = this.state.productos;
+    const listElements = productos.map((element) => {
       return (
         <li key={element._id}>
-          <Link to={`/example/${element._id}`}>
-            <p>{element.title}</p>
+          <Link to={`/product/${element._id}`}>
+            <p>
+              {element.nombre}
+              {element.medida}
+              {element.precio_unitario}
+              {element.fecha_agregado}
+              {element.flete}
+              {element.fecha_entrega}
+              {element.cantidad_disponible}
+            </p>
           </Link>
         </li>
       );
@@ -46,11 +58,11 @@ class Home extends Component {
   };
 
   render() {
-    const examplesList = this.getExamplesAsList();
+    const productosList = this.getExamplesAsList();
     return (
       <div className="container">
-        <h1>Examples</h1>
-        {examplesList}
+        <h1>Product</h1>
+        {productosList}
       </div>
     );
   }

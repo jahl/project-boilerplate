@@ -11,7 +11,7 @@ class Example extends Component {
   }
 
   componentDidMount() {
-    API.getExample(this.props.match.params.id)
+    API.getProduct(this.props.match.params.id)
       .then(res => {
         this.setState({ example: res.data });
       })
@@ -22,7 +22,7 @@ class Example extends Component {
 
   onDeleteClick = () => {
     const id = this.state.example._id;
-    API.deleteExample(id)
+    API.deleteProduct(id)
       .then(() => {
         this.props.history.push("/");
       })

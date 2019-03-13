@@ -10,6 +10,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Products from "./pages/Products";
 
+//esta seccion lleva a lugares distintos de la pagina , no traen informacion
 function App() {
   return (
     <Router>
@@ -17,12 +18,13 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={Homes} />
-          <Route exact path="/example/:id" component={Example} />
+          <Route exact path="/product/:id" component={Example} />
           <Route exact path="/login" component={About} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/about" component={About} />
           <Route exact path="/products" component={Products} />
+          <Route exact path="/newexample" component={ExampleForm} />
           <Route component={NoMatch} />
         </Switch>
       </>

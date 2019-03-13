@@ -6,8 +6,13 @@ class ExampleForm extends Component {
     super(props);
 
     this.state = {
-      title: "",
-      description: ""
+      nombre: "",
+      medida: "",
+      precio_unitario: "",
+      fecha_agregado: "",
+      flete: "",
+      fecha_entrega: "",
+      cantidad_disponible: ""
     };
   }
 
@@ -23,65 +28,131 @@ class ExampleForm extends Component {
   submitExample = (event) => {
     event.preventDefault();
 
-    const title = this.state.title.trim();
-    const description = this.state.description.trim();
+    const nombre = this.state.nombre.trim();
+    const medida = this.state.medida.trim();
+    const precio_unitario = this.state.precio_unitario.trim();
+    const fecha_agregado = this.state.fecha_agregado.trim();
+    const flete = this.state.flete.trim();
+    const fecha_entrega = this.state.fecha_entrega.trim();
+    const cantidad_disponible = this.state.cantidad_disponible.trim();
 
-    if(this.areInputsValid(title, description)) {
-      API.saveExample({
-        title,
-        description
-      }).then(() => {
+      API.saveProduct(this.state).then(() => {
         this.props.history.push('/');
       });
-    }
   }
 
-  areInputsValid = (title, description) => {
-    if(!title) {
-      alert("Please fill out the title");
-      return false;
-    }
-
-    if(!description) {
-      alert("Please fill out the description");
-      return false;
-    }
-
-    return true;
-  }
 
   render() {
-    const title = this.state.title;
-    const description = this.state.description;
+    const nombre = this.state.nombre;
+    const medida = this.state.medida;
+    const precio_unitario = this.state.precio_unitario;
+    const fecha_agregado = this.state.fecha_agregado;
+    const flete = this.state.flete;
+    const fecha_entrega = this.state.fecha_entrega;
+    const cantidad_disponible = this.state.cantidad_disponible;
     
     return (
       <form className="container" onSubmit={this.submitExample}>
-        <h1>Create a new Example</h1>
+        <h1>Crea un producto nuevo</h1>
+        
         <div className="form-group">
           <label
             htmlFor="title">
-            Title:
+            Nombre del Producto:
           </label>
           <input
             className="form-control" 
-            name="title" 
+            name="nombre" 
             type="text"
-            placeholder="title"
+            placeholder="nombre del producto"
             onChange={this.handleInputChange} 
-            value={title} />
+            value={nombre} />
         </div>
+
         <div className="form-group">
-          <label 
-            htmlFor="description">
-            Description:
+          <label
+            htmlFor="title">
+            Medida en milimetros:
           </label>
-          <textarea 
-            className="form-control"
-            name="description" 
-            placeholder="description"
-            onChange={this.handleInputChange}
-            value={description} />
+          <input
+            className="form-control" 
+            name="medida" 
+            type="text"
+            placeholder="medida del producto en mm"
+            onChange={this.handleInputChange} 
+            value={medida} />
         </div>
+
+        <div className="form-group">
+          <label
+            htmlFor="title">
+            Precio unitario:
+          </label>
+          <input
+            className="form-control" 
+            name="precio_unitario" 
+            type="text"
+            placeholder="precio del producto"
+            onChange={this.handleInputChange} 
+            value={precio_unitario} />
+        </div>
+
+        <div className="form-group">
+          <label
+            htmlFor="title">
+            Fecha agregado del producto:
+          </label>
+          <input
+            className="form-control" 
+            name="fecha_agregado" 
+            type="text"
+            placeholder="fecha agregado del producto"
+            onChange={this.handleInputChange} 
+            value={fecha_agregado} />
+        </div>
+
+        <div className="form-group">
+          <label
+            htmlFor="title">
+            Costo por flete:
+          </label>
+          <input
+            className="form-control" 
+            name="flete" 
+            type="text"
+            placeholder="costo por flete"
+            onChange={this.handleInputChange} 
+            value={flete} />
+        </div>
+
+        <div className="form-group">
+          <label
+            htmlFor="title">
+            Fecha de entrega del producto:
+          </label>
+          <input
+            className="form-control" 
+            name="fecha_entrega" 
+            type="text"
+            placeholder="dd/mm/yyyy"
+            onChange={this.handleInputChange} 
+            value={fecha_entrega} />
+        </div>
+        
+        <div className="form-group">
+          <label
+            htmlFor="title">
+            Cantidad disponible:
+          </label>
+          <input
+            className="form-control" 
+            name="cantidad_disponible" 
+            type="text"
+            placeholder="cantidad de producto por pieza"
+            onChange={this.handleInputChange} 
+            value={cantidad_disponible} />
+        </div>
+
         <button 
           className="btn btn-primary"
           type="submit">
