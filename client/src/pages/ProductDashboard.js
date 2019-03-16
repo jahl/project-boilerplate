@@ -25,6 +25,7 @@ class Products extends Component {
   loadExamples = () => {
     API.getProducts()
       .then(res => {
+        debugger;
         this.setState({ productos: res.data });
       })
       .catch(err => {
@@ -36,8 +37,6 @@ class Products extends Component {
     const productos = this.state.productos;
     const listElements = productos.map((element) => {
       return (
-
-        <Link to={`/product/${element._id}`}>
           <tr key={element._id}>
             <td>{element.nombre}</td>
             <td>{element.medida}</td>
@@ -47,16 +46,14 @@ class Products extends Component {
             <td>{element.fecha_entrega}</td>
             <td>{element.cantidad_disponible}</td>
           </tr>
-        </Link>
-
-
       );
     });
 
     if (listElements.length === 0) return <h3>No Results to Display</h3>;
-
-    return <ul>{listElements}</ul>;
+  
+    return listElements;
   };
+
   render() {
     const productosList = this.getExamplesAsList();
     return (

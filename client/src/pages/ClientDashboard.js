@@ -21,7 +21,7 @@ class ClientDashboard extends Component {
   }
 
   loadExamples = () => {
-    API.getProducts()
+    API.getClients()
       .then(res => {
         this.setState({ clients: res.data });
       })
@@ -34,8 +34,6 @@ class ClientDashboard extends Component {
     const clients = this.state.clients;
     const listElements = clients.map((element) => {
       return (
-
-        <Link to={`/product/${element._id}`}>
           <tr className="table" key={element._id}>
             <td>{element.nombre_compania}</td>
             <td>{element.direccion}</td>
@@ -43,15 +41,12 @@ class ClientDashboard extends Component {
             <td>{element.telefono}</td>
             <td>{element.correo}</td>
           </tr>
-        </Link>
-
-
       );
     });
 
     if (listElements.length === 0) return <h3>No Results to Display</h3>;
 
-    return <ul>{listElements}</ul>;
+    return listElements;
   };
   render() {
     const clientList = this.getExamplesAsList();

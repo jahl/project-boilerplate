@@ -5,10 +5,10 @@ export default {
   getProducts: function() {
     return axios.get("/api/product");
   },
-  getSupplier: function() {
+  getSuppliers: function() {
     return axios.get("/api/supplier");
   },
-  getClient: function() {
+  getClients: function() {
     return axios.get("/api/client");
   },
 

@@ -21,7 +21,7 @@ class SupplierDashboard extends Component {
   }
 
   loadExamples = () => {
-    API.getProducts()
+    API.getSuppliers()
       .then(res => {
         this.setState({ suppliers: res.data });
       })
@@ -34,7 +34,6 @@ class SupplierDashboard extends Component {
     const suppliers = this.state.suppliers;
     const listElements = suppliers.map((element) => {
       return (
-            <Link to={`/product/${element._id}`}>
               <tr className="table" key={element._id}>
                 <td>{element.nombre_compania}</td>
                 <td>{element.direccion}</td>
@@ -42,7 +41,6 @@ class SupplierDashboard extends Component {
                 <td>{element.telefono}</td>
                 <td>{element.correo}</td>
               </tr>
-          </Link>
         
 
       );
@@ -50,8 +48,9 @@ class SupplierDashboard extends Component {
 
     if (listElements.length === 0) return <h3>No Results to Display</h3>;
 
-    return <ul>{listElements}</ul>;
+    return listElements;
   };
+  
   render() {
     const supplierList = this.getExamplesAsList();
     return (
