@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import API from "../utils/API";
 
-class ExampleForm extends Component {
+class ProductForm extends Component {
   constructor(props) {
     super(props);
 
@@ -163,4 +163,4 @@ class ExampleForm extends Component {
   }
 }
 
-export default ExampleForm;
+export default ProductForm;

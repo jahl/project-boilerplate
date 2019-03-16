@@ -9,7 +9,9 @@ import Suppliers from "./pages/Suppliers";
 import Login from "./pages/Login";
 import NoMatches from "./pages/NoMatches";
 import Nav from "./components/Nav";
-import Products from "./pages/Products";
+import ProductDashboard from "./pages/ProductDashboard";
+import SupplierDashboard from "./pages/SupplierDashboard";
+import ClientDashboard from "./pages/ClientDashboard";
 
 
 //esta seccion lleva a lugares distintos de la pagina , no traen informacion
@@ -29,6 +31,10 @@ function App() {
           <Route exact path="/suppliers" component={Suppliers} />
           <Route exact path="/products" component={Products} />
 
+          <Route exact path="/productdashboard" component={ProductDashboard} />
+          <Route exact path="/newexample" component={ProductForm} />
+          <Route exact path="/supplierdashboard" component={SupplierDashboard} />
+          <Route exact path="/clientdashboard" component={ClientDashboard} />
           <Route component={NoMatches} />
         </Switch>
       </>
