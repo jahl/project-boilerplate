@@ -1,32 +1,35 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-//import Homes from "../pages/Homes";
-import Homes from "./pages/Homes";
-import Example from "./pages/Example";
-import ExampleForm from "./pages//ExampleForm";
-import Register from "./pages/Register";
+import Home from "./pages/Home";
+//import Example from "./pages/Example";
+import Registro from "./pages/Registro";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
-import NoMatch from "./pages/NoMatch";
+import Suppliers from "./pages/Suppliers";
+import Login from "./pages/Login";
+import NoMatches from "./pages/NoMatches";
 import Nav from "./components/Nav";
 import Products from "./pages/Products";
 
+
 //esta seccion lleva a lugares distintos de la pagina , no traen informacion
 function App() {
-  return (
+  return ( 
     <Router>
       <>
         <Nav />
         <Switch>
-          <Route exact path="/" component={Homes} />
-          <Route exact path="/product/:id" component={Example} />
-          <Route exact path="/login" component={About} />
-          <Route exact path="/register" component={Register} />
+          <Route exact path="/" component={Home} />
+         
+          <Route exact path="/registro" component={Registro} />
           <Route exact path="/contact" component={Contact} />
+          
           <Route exact path="/about" component={About} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/suppliers" component={Suppliers} />
           <Route exact path="/products" component={Products} />
-          <Route exact path="/newexample" component={ExampleForm} />
-          <Route component={NoMatch} />
+
+          <Route component={NoMatches} />
         </Switch>
       </>
     </Router>
