@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import API from "../utils/API";
 
 class Products extends Component {
@@ -37,20 +36,20 @@ class Products extends Component {
     const productos = this.state.productos;
     const listElements = productos.map((element) => {
       return (
-          <tr key={element._id}>
-            <td>{element.nombre}</td>
-            <td>{element.medida}</td>
-            <td>{element.precio_unitario}</td>
-            <td>{element.fecha_agregado}</td>
-            <td>{element.flete}</td>
-            <td>{element.fecha_entrega}</td>
-            <td>{element.cantidad_disponible}</td>
-          </tr>
+        <tr key={element._id}>
+          <td>{element.nombre}</td>
+          <td>{element.medida}</td>
+          <td>{element.precio_unitario}</td>
+          <td>{element.fecha_agregado}</td>
+          <td>{element.flete}</td>
+          <td>{element.fecha_entrega}</td>
+          <td>{element.cantidad_disponible}</td>
+        </tr>
       );
     });
 
     if (listElements.length === 0) return <h3>No Results to Display</h3>;
-  
+
     return listElements;
   };
 
@@ -76,7 +75,7 @@ class Products extends Component {
             {productosList}
           </tbody>
         </table>
-        
+
       </div>
     );
   }
