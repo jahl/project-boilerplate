@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const clientSchema = new Schema({
-  nombre_compania: { type: String, required: true },
+const ordenSchema = new Schema({
+  nombrev : { type: String, required: true },
   direccion: { type: String, required: true },
   estado: { type: String, required: true },
   telefono: { type: Number, required: true },
@@ -10,6 +10,6 @@ const clientSchema = new Schema({
   sector: { type: String, required: true}
 });
 
-const Client = mongoose.model("Client", clientSchema);
+const OrdenCompra = mongoose.model("OrdenCompra", ordenSchema);
 
-module.exports = Client;
+module.exports = OrdenCompra;

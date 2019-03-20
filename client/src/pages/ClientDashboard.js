@@ -32,15 +32,17 @@ class ClientDashboard extends Component {
 
   getExamplesAsList = () => {
     const clients = this.state.clients;
-    const listElements = clients.map((element) => {
+    const listElements = clients.map(element => {
       return (
-          <tr className="table" key={element._id}>
-            <td>{element.nombre_compania}</td>
-            <td>{element.direccion}</td>
-            <td>{element.estado}</td>
-            <td>{element.telefono}</td>
-            <td>{element.correo}</td>
-          </tr>
+        <tr className="table" key={element._id}>
+          <td>{element.nombre_compania}</td>
+          <td>{element.direccion}</td>
+          <td>{element.estado}</td>
+          <td>{element.telefono}</td>
+          <td>{element.correo}</td>
+          <td><input type="checkbox"></input></td>
+          <td><a>Añadir a mi lista</a></td>
+        </tr>
       );
     });
 
@@ -53,7 +55,7 @@ class ClientDashboard extends Component {
     return (
       <div className="container">
         <h1>Clientes</h1>
-        <table >
+        <table>
           <thead>
             <tr>
               <th scope="col">Nombre de Compañia</th>
@@ -61,16 +63,15 @@ class ClientDashboard extends Component {
               <th scope="col">Estado</th>
               <th scope="col">Telefono</th>
               <th scope="col">Correo</th>
+              <th scope="col">Seleccionar</th>
+              <th scope="col">Agregar</th>
             </tr>
           </thead>
-          <tbody >
-            {clientList}
-          </tbody>
+          <tbody>{clientList}</tbody>
         </table>
       </div>
     );
   }
 }
-
 
 export default ClientDashboard;

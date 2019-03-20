@@ -14,13 +14,13 @@ export default {
 
   // Gets the example with the given id
   getProduct: function(id) {
-    return axios.get(`/api/product/${id}` );
+    return axios.get(`/api/product/${id}`);
   },
   getSupplier: function(id) {
-    return axios.get(`/api/supplier/${id}` );
+    return axios.get(`/api/supplier/${id}`);
   },
   getClient: function(id) {
-    return axios.get(`/api/client/${id}` );
+    return axios.get(`/api/client/${id}`);
   },
 
   // Deletes the example with the given id
@@ -44,5 +44,4 @@ export default {
   saveClient: function(clientData) {
     return axios.post("/api/client", clientData);
   }
-
 };

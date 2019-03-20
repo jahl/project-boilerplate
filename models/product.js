@@ -8,7 +8,8 @@ const productSchema = new Schema({
   fecha_agregado: { type: Date, default: Date.now },
   flete: { type: Number, required: false },
   fecha_entrega: { type: String, required: true },
-  cantidad_disponible: { type: Number, required: true }
+  cantidad_disponible: { type: Number, required: true },
+  proveedor: {type: String, required: true}
 });
 
 const Product = mongoose.model("Product", productSchema);

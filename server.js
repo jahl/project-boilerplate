@@ -1,13 +1,10 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT;
 const app = express();
 
-
-
-  
 const routes = require("./routes");
 
 app.use(express.urlencoded({ extended: true }));
@@ -21,7 +18,6 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI);
-
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
