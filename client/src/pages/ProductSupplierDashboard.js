@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 
+//product dashboard for client
 class Products extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +35,7 @@ class Products extends Component {
 
   getExamplesAsList = () => {
     const productos = this.state.productos;
-    const listElements = productos.map((element) => {
+    const listElements = productos.map(element => {
       return (
         <tr key={element._id}>
           <td>{element.nombre}</td>
@@ -44,6 +45,8 @@ class Products extends Component {
           <td>{element.flete}</td>
           <td>{element.fecha_entrega}</td>
           <td>{element.cantidad_disponible}</td>
+          <td><input type="checkbox" id="seleccion" /></td>
+          <td id="poner el update de productController.js">Editar</td>
         </tr>
       );
     });
@@ -69,17 +72,16 @@ class Products extends Component {
               <th scope="col">Flete</th>
               <th scope="col">Fecha de entrega</th>
               <th scope="col">Cantidad disponible</th>
+              <th scope="col">Seleccion de producto</th>
+              <th scope="col">Editar</th>
             </tr>
           </thead>
-          <tbody >
-            {productosList}
-          </tbody>
+          <tbody>{productosList}</tbody> 
+          <a type="button" id="agregarProducto" href="/addproduct">Agregar un producto</a>
         </table>
-
       </div>
     );
   }
 }
-
 
 export default Products;

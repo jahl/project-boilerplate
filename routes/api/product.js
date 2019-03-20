@@ -2,7 +2,8 @@ const router = require("express").Router();
 const productController = require("../../controllers/productController");
 
 // Matches with "/api/product"
-router.route("/")
+router
+  .route("/")
   .get(productController.findAll)
   .post(productController.create);
 

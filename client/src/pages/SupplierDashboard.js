@@ -32,17 +32,17 @@ class SupplierDashboard extends Component {
 
   getExamplesAsList = () => {
     const suppliers = this.state.suppliers;
-    const listElements = suppliers.map((element) => {
+    const listElements = suppliers.map(element => {
       return (
-              <tr className="table" key={element._id}>
-                <td>{element.nombre_compania}</td>
-                <td>{element.direccion}</td>
-                <td>{element.estado}</td>
-                <td>{element.telefono}</td>
-                <td>{element.correo}</td>
-              </tr>
-        
-
+        <tr className="table" key={element._id}>
+          <td>{element.nombre_compania}</td>
+          <td>{element.direccion}</td>
+          <td>{element.estado}</td>
+          <td>{element.telefono}</td>
+          <td>{element.correo}</td>
+          <td><input type="checkbox"></input></td>
+          <td><a>Añadir a mi lista</a></td>
+        </tr>
       );
     });
 
@@ -50,13 +50,13 @@ class SupplierDashboard extends Component {
 
     return listElements;
   };
-  
+
   render() {
     const supplierList = this.getExamplesAsList();
     return (
       <div className="container">
         <h1>Distribuidor</h1>
-        <table >
+        <table>
           <thead>
             <tr>
               <th scope="col">Nombre de Compañia</th>
@@ -64,16 +64,15 @@ class SupplierDashboard extends Component {
               <th scope="col">Estado</th>
               <th scope="col">Telefono</th>
               <th scope="col">Correo</th>
+              <th scope="col">Seleccionar</th>
+              <th scope="col">Agregar</th>
             </tr>
           </thead>
-          <tbody >
-        {supplierList}
-        </tbody>
+          <tbody>{supplierList}</tbody>
         </table>
       </div>
     );
   }
 }
-
 
 export default SupplierDashboard;
