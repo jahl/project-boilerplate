@@ -19,20 +19,20 @@ function Nav() {
             Home
           </Link>
         </li>
-        <li className="nav-item active">
-          <Link className="nav-link" to="/newexample">
-            Make your own
-          </Link>
-        </li>
         {
           token
             ? (
               <>
-                <li className="nav-item active" style={{color: "white"}}>
+                <li className="nav-item active">
+                  <Link className="nav-link" to="/newexample">
+                    Make your own
+                  </Link>
+                </li>
+                <li className="nav-item active" style={{ color: "white" }}>
                   Welcome, {user.email}
                 </li>
                 <li className="nav-item active">
-                  <button onClick={logOut}   className="btn btn-primary">
+                  <button onClick={logOut} className="btn btn-primary">
                     Logout
                   </button>
                 </li>
@@ -53,8 +53,6 @@ function Nav() {
               </>
             )
         }
-
-
       </ul>
     </nav>
   );
