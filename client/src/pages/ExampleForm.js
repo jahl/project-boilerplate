@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from "../utils/API";
+import Store from "../utils/Store";
 
 class ExampleForm extends Component {
   constructor(props) {
@@ -9,6 +10,14 @@ class ExampleForm extends Component {
       title: "",
       description: ""
     };
+  }
+
+  componentDidMount() {
+    const { token } = Store.get("userData");
+    if (!token) {
+      alert("You need to be logged in to use this application!");
+      this.props.history.push('/');
+    }
   }
 
   handleInputChange = (event) => {
@@ -26,7 +35,7 @@ class ExampleForm extends Component {
     const title = this.state.title.trim();
     const description = this.state.description.trim();
 
-    if(this.areInputsValid(title, description)) {
+    if (this.areInputsValid(title, description)) {
       API.saveExample({
         title,
         description
@@ -37,12 +46,12 @@ class ExampleForm extends Component {
   }
 
   areInputsValid = (title, description) => {
-    if(!title) {
+    if (!title) {
       alert("Please fill out the title");
       return false;
     }
 
-    if(!description) {
+    if (!description) {
       alert("Please fill out the description");
       return false;
     }
@@ -53,7 +62,7 @@ class ExampleForm extends Component {
   render() {
     const title = this.state.title;
     const description = this.state.description;
-    
+
     return (
       <form className="container" onSubmit={this.submitExample}>
         <h1>Create a new Example</h1>
@@ -63,26 +72,26 @@ class ExampleForm extends Component {
             Title:
           </label>
           <input
-            className="form-control" 
-            name="title" 
+            className="form-control"
+            name="title"
             type="text"
             placeholder="title"
-            onChange={this.handleInputChange} 
+            onChange={this.handleInputChange}
             value={title} />
         </div>
         <div className="form-group">
-          <label 
+          <label
             htmlFor="description">
             Description:
           </label>
-          <textarea 
+          <textarea
             className="form-control"
-            name="description" 
+            name="description"
             placeholder="description"
             onChange={this.handleInputChange}
             value={description} />
         </div>
-        <button 
+        <button
           className="btn btn-primary"
           type="submit">
           Submit

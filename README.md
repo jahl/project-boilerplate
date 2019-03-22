@@ -9,7 +9,7 @@
 
 2. Install all dependencies with the following command:
     ```bash
-      $ npm run install
+      $ npm install
     ```
 
 3. Make a `.env` file, if you need to, you can use `.example.env` as a base for your own.

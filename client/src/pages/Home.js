@@ -51,6 +51,7 @@ class Home extends Component {
 
   render() {
     const examplesList = this.getExamplesAsList();
+
     return (
       <div className="container">
         <h1>Examples</h1>

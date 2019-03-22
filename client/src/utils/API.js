@@ -16,5 +16,11 @@ export default {
   // Saves an example to the database
   saveExample: function(exampleData) {
     return axios.post("/api/example", exampleData);
+  },
+  register: function(registerData) {
+    return axios.post("/api/authentication/register", registerData);
+  },
+  login: function(loginData) {
+    return axios.post("/api/authentication/login", loginData);
   }
 };
