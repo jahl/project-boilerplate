@@ -274,8 +274,7 @@ let productosSeed = [
     precio_unitario: 427.84,
     flete: "",
     fecha_entrega: "06/04/2019",
-    cantidad_disponible: 50
-    ,
+    cantidad_disponible: 50,
     proveedor: "Proveedor 4"
   },
   {
@@ -372,3 +371,5 @@ db.Product.remove({})
     console.error(err);
     process.exit(1);
   });
+
+ 

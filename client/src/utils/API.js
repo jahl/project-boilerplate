@@ -43,5 +43,14 @@ export default {
   },
   saveClient: function(clientData) {
     return axios.post("/api/client", clientData);
+  },
+  generateOrder: function(orderData) {
+    return axios.post("/api/order", orderData)
+  },
+  register: function(registerData) {
+    return axios.post("/api/authentication/register", registerData);
+  },
+  login: function(loginData) {
+    return axios.post("/api/authentication/login", loginData);
   }
 };

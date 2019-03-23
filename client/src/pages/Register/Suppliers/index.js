@@ -1,33 +1,82 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import API from "../utils/API";
+import Store from "../utils/Store";
 import "./suppliers.css";
 
 
 
 class Suppliers extends Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
+
+  handleInputChange = event => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const email = this.state.email.trim();
+    const password = this.state.password;
+
+    if (this.areInputsValid(email, password)) {
+      API.register({
+        email,
+        password
+      }).then(response => {
+        Store.set("userData", response.data);
+        this.props.history.push("/");
+      });
+    }
+  };
+
+  areInputsValid = (email, password) => {
+    if (!email) {
+      alert("Please fill out the email");
+      return false;
+    }
+
+    if (!password) {
+      alert("Please fill out the password");
+      return false;
+    }
+
+    return true;
+  };
   render() {
-
+    const { email, password } = this.state;
     return (
 
       <div className="container w-100 my-md-5 pl-md-5 my-5">
 
         <div className="col">
 
-          <h4 className="mb-3">Create account</h4>
-          <form className="needs-validation">
+          <h4 className="mb-3">Create una cuenta</h4>
+          <form className="needs-validation" onSubmit={this.handleSubmit}>
             <div className="row">
               <div className="col-md-4 mb-3">
-                <input type="text" class="form-control" id="email" placeholder="Email"></input>
+                <input name="email" type="email" className="form-control" id="email" placeholder="Correo electronico" value={email} onChange={this.handleInputChange}></input>
 
               </div>
               <div className="col-md-4 mb-3">
-                <input type="text" class="form-control" id="password" placeholder="Password"></input>
+                <input name="password" type="password" className="form-control" id="password" placeholder="Contrase;a" value="password" onChange={this.handleInputChange}></input>
 
               </div>
 
               <div className="col-md-4 mb-3">
-                <input type="text" class="form-control" id="confirmpassword" placeholder="Confirm Password" ></input>
+                <input type="text" className="form-control" id="confirmpassword" placeholder="Confirma tu contrase;a" ></input>
 
               </div>
             </div>

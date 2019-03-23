@@ -1,8 +1,60 @@
 import React, { Component } from "react";
+import API from "../utils/API";
+import Store from "../utils/Store";
 import "./login.css";
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
+
+  handleInputChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const email = this.state.email.trim();
+    const password = this.state.password;
+
+    if(this.areInputsValid(email, password)) {
+      API.login({
+        email,
+        password
+      }).then((response) => {
+        Store.set("userData", response.data);
+        this.props.history.push('/');
+      });
+    }
+  }
+
+  areInputsValid = (email, password) => {
+    if(!email) {
+      alert("Please fill out the email");
+      return false;
+    }
+
+    if(!password) {
+      alert("Please fill out the password");
+      return false;
+    }
+
+    return true;
+  }
+
   render() {
+    const { email, password } = this.state;
     return (
       <div className="container col my-5">
         <div className="col-12">
@@ -20,6 +72,7 @@ class Login extends Component {
               action="#"
               method="POST"
               role="form"
+              onSubmit={this.handleSubmit}
             >
               <div className="form-group">
                 <input
@@ -27,6 +80,8 @@ class Login extends Component {
                   className="form-control"
                   id="email"
                   name="email"
+                  onChange={this.handleInputChange}
+                  value={email}
                   placeholder="Email"
                   tabindex="2"
                   required
@@ -38,6 +93,8 @@ class Login extends Component {
                   className="form-control"
                   id="subject"
                   name="subject"
+                  onChange={this.handleInputChange}
+                  value={password}
                   placeholder="Password"
                   tabindex="3"
                 />

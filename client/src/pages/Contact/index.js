@@ -9,7 +9,7 @@ class Contacto extends Component {
         <div className="col-12">
           <div className="col-12">
             <h5 className="my-5 text-dark text-center display-4 font-weight-bold">
-              Contact
+              Contáctanos
             </h5>
           </div>
         </div>
@@ -28,7 +28,7 @@ class Contacto extends Component {
                   className="form-control"
                   id="name"
                   name="name"
-                  placeholder="Your name"
+                  placeholder="Nombre"
                   tabindex="1"
                   required
                 />
@@ -39,7 +39,7 @@ class Contacto extends Component {
                   className="form-control"
                   id="email"
                   name="email"
-                  placeholder="Your Email"
+                  placeholder="Correo electrónico"
                   tabindex="2"
                   required
                 />
@@ -49,7 +49,7 @@ class Contacto extends Component {
                   type="text"
                   className="form-control"
                   id="subject"
-                  name="subject"
+                  name="título"
                   placeholder="Subject"
                   tabindex="3"
                 />
@@ -61,7 +61,7 @@ class Contacto extends Component {
                   name="message"
                   className="form-control"
                   id="message"
-                  placeholder="Message..."
+                  placeholder="Mensaje..."
                   tabindex="4"
                   required
                 />
@@ -71,7 +71,7 @@ class Contacto extends Component {
                   type="submit"
                   className="btn  btn-outline-warning my-4 py-3 h-100 btn-lg"
                 >
-                  Send Message
+                  Enviar mensaje
                 </button>
               </div>
             </form>

@@ -46,7 +46,7 @@ class Products extends Component {
           <td>{element.fecha_entrega}</td>
           <td>{element.cantidad_disponible}</td>
           <td><input type="checkbox" id="seleccion" /></td>
-          <td id="poner el update de productController.js">Editar</td>
+          <td><a href="/addproduct">Editar</a></td>
         </tr>
       );
     });
