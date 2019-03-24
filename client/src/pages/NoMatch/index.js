@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 
-function NoMatches() {
+function NoMatch() {
   return (
   
 <div>
@@ -34,4 +34,4 @@ function NoMatches() {
   );
 }
 
-export default NoMatches;
+export default NoMatch;

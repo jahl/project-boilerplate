@@ -1,38 +1,36 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NavDashboard from "./components/NavDash";
 import Home from "./pages/Home";
-import Nav from "./components/Nav";
+import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
 import Contact from "./pages/Contact";
-import About from "./pages/About";
-import Suppliers from "./pages/Suppliers";
-import Buyers from "./pages/Buyers";
 import Login from "./pages/Login";
-import NoMatches from "./pages/NoMatches";
+import NoMatch from "./pages/NoMatch";
 import ProductDashboard from "./pages/ProductDashboard";
 import SupplierDashboard from "./pages/SupplierDashboard";
 import ClientDashboard from "./pages/ClientDashboard";
 import ProductForm from "./pages/ProductForm";
-import NavDashboard from "./components/Nav-Dash";
 
 
 //esta seccion lleva a lugares distintos de la pagina , no traen informacion
 function App() {
   return (
+
+
     <Router>
       <>
-        <Nav />
+
+
         <Switch>
           <Route exact path="/" component={Home} />
 
           <Route exact path="/register" component={Register} />
           <Route exact path="/contact" component={Contact} />
 
-          <Route exact path="/about" component={About} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/suppliers" component={Suppliers} />
-          <Route exact path="/buyers" component={Buyers} />
-          <Route exact path="/products" component={ProductDashboard} />
+
+          <Route exact path="/dashboard" component={Dashboard} />
 
           <Route exact path="/productdashboard" component={ProductDashboard} />
           <Route exact path="/newexample" component={ProductForm} />
@@ -41,7 +39,7 @@ function App() {
           <Route exact path="/navdashboard" component={NavDashboard} />
 
 
-          <Route component={NoMatches} />
+          <Route component={NoMatch} />
         </Switch>
       </>
     </Router>
