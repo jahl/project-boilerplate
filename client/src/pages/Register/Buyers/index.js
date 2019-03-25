@@ -17,25 +17,25 @@ class Buyers extends Component {
           <br />
           <div className="row">
             <div className="col-md-6 mb-3">
-              <input type="text" class="form-control" id="firstname" placeholder="First Name" ></input>
+              <input type="text" className="form-control" id="firstname" placeholder="First Name" ></input>
 
             </div>
 
             <div className="col-md-6 mb-3">
-              <input type="text" class="form-control" id="lastname" placeholder="Last Name" ></input>
+              <input type="text" className="form-control" id="lastname" placeholder="Last Name" ></input>
 
             </div>
           </div>
           <br />
           <div className="row">
             <div className="col-md-12 mb-3">
-              <input type="text" class="form-control" id="email" placeholder="Email" ></input>
+              <input type="text" className="form-control" id="email" placeholder="Email" ></input>
             </div>
           </div>
           <br />
           <div className="row">
             <div className="col-md-12 mb-3">
-              <input type="text" class="form-control" id="password" placeholder="Password" ></input>
+              <input type="text" className="form-control" id="password" placeholder="Password" ></input>
             </div>
           </div>
 

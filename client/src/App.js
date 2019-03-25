@@ -33,7 +33,7 @@ function App() {
           <Route exact path="/dashboard" component={Dashboard} />
 
           <Route exact path="/productdashboard" component={ProductDashboard} />
-          <Route exact path="/newexample" component={ProductForm} />
+          <Route exact path="/newproduct" component={ProductForm} />
           <Route exact path="/supplierdashboard" component={SupplierDashboard} />
           <Route exact path="/clientdashboard" component={ClientDashboard} />
           <Route exact path="/navdashboard" component={NavDashboard} />
