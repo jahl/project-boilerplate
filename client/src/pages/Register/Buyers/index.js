@@ -13,7 +13,7 @@ class Buyers extends Component {
             <div className="col-md-6 mb-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="firstname"
                 placeholder="First Name"
               />
@@ -22,7 +22,7 @@ class Buyers extends Component {
             <div className="col-md-6 mb-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="lastname"
                 placeholder="Last Name"
               />
@@ -33,7 +33,7 @@ class Buyers extends Component {
             <div className="col-md-12 mb-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="email"
                 placeholder="Email"
               />
@@ -44,7 +44,7 @@ class Buyers extends Component {
             <div className="col-md-12 mb-3">
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="password"
                 placeholder="Password"
               />

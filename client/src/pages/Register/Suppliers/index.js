@@ -11,29 +11,17 @@ class Suppliers extends Component {
           <form className="needs-validation">
             <div className="row">
               <div className="col-md-4 mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="email"
-                  placeholder="Email"
-                />
+                <input type="text" className="form-control" id="email" placeholder="Email"></input>
+
               </div>
               <div className="col-md-4 mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="password"
-                  placeholder="Password"
-                />
+                <input type="text" className="form-control" id="password" placeholder="Password"></input>
+
               </div>
 
               <div className="col-md-4 mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="confirmpassword"
-                  placeholder="Confirm Password"
-                />
+                <input type="text" className="form-control" id="confirmpassword" placeholder="Confirm Password" ></input>
+
               </div>
             </div>
           </form>
@@ -46,20 +34,12 @@ class Suppliers extends Component {
           <form className="needs-validation">
             <div className="row">
               <div className="col-md-6 mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="namecompany"
-                  placeholder="Name Company "
-                />
+                <input type="text" className="form-control" id="namecompany" placeholder="Name Company " ></input>
+
               </div>
               <div className="col-md-6 mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="companysector"
-                  placeholder="Company Sector"
-                />
+                <input type="text" className="form-control" id="companysector" placeholder="Company Sector"></input>
+
               </div>
             </div>
           </form>
@@ -72,38 +52,24 @@ class Suppliers extends Component {
           <form className="needs-validation">
             <div className="row">
               <div className="col-md-3 mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="address1"
-                  placeholder="Address 1"
-                />
+                <input type="text" className="form-control" id="address1" placeholder="Address 1"></input>
+
               </div>
               <div className="col-md-3 mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="address2"
-                  placeholder="Address 2"
-                />
+
+                <input type="text" className="form-control" id="address2" placeholder="Address 2" ></input>
+
               </div>
 
               <div className="col-md-3 mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="country"
-                  placeholder="Country"
-                />
+                <input type="text" className="form-control" id="country" placeholder="Country"></input>
+
               </div>
 
-              <div className="col-md-3 mb-3 form-gro">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="state"
-                  placeholder="State"
-                />
+
+              <div className="col-md-3 mb-3">
+                <input type="text" className="form-control" id="state" placeholder="State" ></input>
+
               </div>
             </div>
           </form>

@@ -80,6 +80,12 @@ class Products extends Component {
           <a type="button" id="agregarProducto" href="/addproduct">Agregar un producto</a>
         </table>
       </div>
+
+
+
+
+
+
     );
   }
 }

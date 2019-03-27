@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 
@@ -17,64 +17,85 @@ class Sidebar extends Component {
                     <div className="sidebar-sticky">
                         <ul className="nav flex-column">
                             <li className="nav-item">
+
+
+
+
+
                                 <a className="nav-link active text-dark">
-                                    <span data-feather="home"></span>
-                                    Dashboard
-                                    </a>
+                                    <Link className=" nav-link font-weight-bolder" to="/dashboard">
+                                        &nbsp; Dashboard  &nbsp;
+                                    <i className=" ml-3 fas fa-lg  fa-tachometer-alt"></i>
+                                    </Link>
+                                </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-dark" href="#">
-                                    <span data-feather="file"></span>
-                                    Orders
-                    </a>
+                                <a className="nav-link text-dark">
+                                    <Link className=" nav-link font-weight-bolder" to="/productdashboard">
+                                        &nbsp; Orders    &nbsp;
+                                    <i className=" ml-5 far fa-lg fa-clipboard"></i>
+                                    </Link>
+                                </a>
                             </li>
+
                             <li className="nav-item">
-                                <a className="nav-link text-dark" href="#">
-                                    <span data-feather="shopping-cart"></span>
-                                    Products
-                    </a>
+                                <a className="nav-link  font-weight-bolder text-dark" data-toggle="collapse" href="#collapse0" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    &nbsp; Products  &nbsp;
+                                     <i className=" ml-4 fas fa-lg fa-caret-down"></i>
+                                </a>
+
+                                <div className="collapse" id="collapse0">
+                                    <li className="nav-item">
+                                        <Link className=" nav-link " to="/productdashboard">
+                                            <a className="nav-link text-secondary">
+                                                See All
+                                      </a>
+                                        </Link>
+                                    </li>
+
+                                    <li className="nav-item">
+                                        <Link to="/newproduct">
+                                            <a className="nav-link text-secondary">
+                                                Add New Product
+                                             </a>
+                                        </Link>
+                                    </li>
+                                </div>
                             </li>
+
+
+
+
                             <li className="nav-item">
-                                <a className="nav-link text-dark" href="#">
-                                    <span data-feather="users"></span>
-                                    Customers
+                                <a className="nav-link text-dark font-weight-bolder" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    &nbsp; Customers  &nbsp;
+                                   <i className=" ml-4 fas fa-lg fa-caret-down"></i>
+                                </a>
+
+                                <div className="collapse" id="collapse1">
+                                    <li className="nav-item">
+                                        <Link className=" nav-link font-weight-bolder" to="/clientdashboard">
+                                            <a className="nav-link text-secondary">
+                                                See All
+                                      </a>
+                                        </Link>
+                                    </li>
+
+                                    <li className="nav-item">
+                                        <Link className=" nav-link font-weight-bolder" to="/search">
+                                            <a className="nav-link text-secondary">
+                                                Search
                     </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link text-dark" href="#">
-                                    <span data-feather="bar-chart-2"></span>
-                                    Reports
-                    </a>
+                                        </Link>
+
+                                    </li>
+                                </div>
                             </li>
 
                         </ul>
 
-                        <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                            <span>Products</span>
-                            <a className="d-flex align-items-center text-muted" href="#">
-                            </a>
-                        </h6>
-                        <ul className="nav flex-column mb-2">
-                            <li className="nav-item">
-                                <a className="nav-link text-dark" href="#">
-                                    <span data-feather="file-text"></span>
-                                    See All Products
-                    </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link text-dark" href="#">
-                                    <span data-feather="file-text"></span>
-                                    Add New Product
-                    </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link text-dark" href="#">
-                                    <span data-feather="file-text"></span>
-                                    Edit New Product
-                    </a>
-                            </li>
 
-                        </ul>
+
                     </div>
                 </nav>
 
