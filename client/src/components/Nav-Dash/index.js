@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import Store from "../../utils/Store";
 
 //esta es la que falta modificar con la de chuy
 

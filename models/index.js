@@ -4,5 +4,4 @@ module.exports = {
   Supplier: require("./supplier"),
   Client: require("./client"),
   Order: require("./order"),
-  User: require("./user")
 };

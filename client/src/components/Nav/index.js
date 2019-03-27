@@ -1,15 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Store from "../../utils/Store";
 import "./style.css";
 
-function logOut() {
-  Store.set("userData", {});
-  window.location.reload();
-}
+
 
 function Nav() {
-  const { token, user } = Store.get("userData");
+  
   
   return (
     <div className="pos-f-t bg-white">

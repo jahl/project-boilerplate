@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import API from "../utils/API";
-import Store from "../utils/Store";
 
 class ProductForm extends Component {
   constructor(props) {
@@ -18,13 +17,7 @@ class ProductForm extends Component {
       nombre_compania: ""
     };
   }
-  componentDidMount() {
-    const { token } = Store.get("userData");
-    if (!token) {
-      alert("You need to be logged in to use this application!");
-      this.props.history.push('/');
-    }
-  }
+  
   handleInputChange = event => {
     const name = event.target.name;
     const value = event.target.value;
