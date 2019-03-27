@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
 import API from "../utils/API";
 
 class ProductForm extends Component {
@@ -16,18 +17,18 @@ class ProductForm extends Component {
       nombre_compania: ""
     };
   }
-
+  
   handleInputChange = event => {
     const name = event.target.name;
     const value = event.target.value;
-    const compania = event.target.compania
+    const compania = event.target.compania;
 
     this.setState({
       [name]: value
     });
   };
 
-  submitExample = event => {
+  submitProduct = event => {
     event.preventDefault();
 
     const nombre = this.state.nombre.trim();
@@ -41,7 +42,6 @@ class ProductForm extends Component {
 
     API.saveProduct(this.state).then(() => {
       this.props.history.push("/productsupplierdashboard");
-      this.props.history.push("/productclientdashboard");
     });
   };
 
@@ -56,7 +56,7 @@ class ProductForm extends Component {
     const nombre_compania = this.state.nombre_compania;
 
     return (
-      <form className="container" onSubmit={this.submitExample}>
+      <form className="container" onSubmit={this.submitProduct}>
         <h1>Agrega un producto</h1>
 
         <div className="form-group">
@@ -163,4 +163,4 @@ class ProductForm extends Component {
   }
 }
 
-export default ProductForm;
+export default withRouter(ProductForm);

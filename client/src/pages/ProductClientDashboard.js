@@ -27,13 +27,13 @@ class Products extends Component {
   loadExamples = () => {
     API.getProducts()
       .then(res => {
-        const products = res.data.map((product) => {
+        const products = res.data.map(product => {
           return {
             ...product,
             selected: false,
             quantity: 0
           };
-        })
+        });
         this.setState({ productos: products });
       })
       .catch(err => {
@@ -45,7 +45,10 @@ class Products extends Component {
     const productos = this.state.productos;
     const listElements = productos.map(product => {
       return (
-        <ProductRow product={product} updateProductById={this.updateProductById} />
+        <ProductRow
+          product={product}
+          updateProductById={this.updateProductById}
+        />
       );
     });
 
@@ -56,8 +59,8 @@ class Products extends Component {
 
   updateProductById = (id, key, value) => {
     this.setState({
-      productos: this.state.productos.map((producto) => {
-        if(producto._id === id) {
+      productos: this.state.productos.map(producto => {
+        if (producto._id === id) {
           return {
             ...producto,
             [key]: value
@@ -67,15 +70,23 @@ class Products extends Component {
         return producto;
       })
     });
-  }
+  };
 
   processRequest = () => {
-    const selectedProducts = this.state.productos.filter((product) => {
+    const selectedProducts = this.state.productos.filter(product => {
       return product.selected;
     });
-   
+
     //Mandar al API los productos seleccionados
-  }
+    API.generateOrder({
+      items: selectedProducts.map(product => {
+        return { productId: product._id, quantity: product.quantity };
+      }),
+      clientId: "5c9182fc9a8be229bc5c79b3"
+    }).then(() => {
+      console.log("Order placed successfuly")
+    });
+  };
 
   render() {
     const productosList = this.getExamplesAsList();
@@ -98,8 +109,13 @@ class Products extends Component {
             </tr>
           </thead>
           <tbody>{productosList}</tbody>
-          <button type="button" id="solicitud" onClick={this.processRequest}> Procesar solicitud de compra </button> 
-          <a type="button" id="agregarProducto" href="/addproduct">Agregar un producto</a>
+          <button type="button" id="solicitud" onClick={this.processRequest}>
+            {" "}
+            Procesar solicitud de compra{" "}
+          </button>
+          <a type="button" id="agregarProducto" href="/addproduct">
+            Agregar un producto
+          </a>
         </table>
       </div>
     );

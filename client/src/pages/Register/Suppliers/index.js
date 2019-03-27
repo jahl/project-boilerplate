@@ -1,33 +1,35 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+//cant get to that folder
+import API from "../../../utils/API"; 
 import "./suppliers.css";
 
 
 
 class Suppliers extends Component {
-
+  
   render() {
-
+   
     return (
 
       <div className="container w-100 my-md-5 pl-md-5 my-5">
 
         <div className="col">
 
-          <h4 className="mb-3">Create account</h4>
-          <form className="needs-validation">
+          <h4 className="mb-3">Create una cuenta</h4>
+          <form className="needs-validation" >
             <div className="row">
               <div className="col-md-4 mb-3">
-                <input type="text" class="form-control" id="email" placeholder="Email"></input>
+                <input name="email" type="email" className="form-control" id="email" placeholder="Correo electronico" ></input>
 
               </div>
               <div className="col-md-4 mb-3">
-                <input type="text" class="form-control" id="password" placeholder="Password"></input>
+                <input name="password" type="password" className="form-control" id="password" placeholder="Contrase;a" value="password" ></input>
 
               </div>
 
               <div className="col-md-4 mb-3">
-                <input type="text" class="form-control" id="confirmpassword" placeholder="Confirm Password" ></input>
+                <input type="text" className="form-control" id="confirmpassword" placeholder="Confirma tu contrase;a" ></input>
 
               </div>
             </div>

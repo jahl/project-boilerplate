@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
+
+
 function Nav() {
+  
+  
   return (
     <div className="pos-f-t bg-white">
       <div className="collapse" id="navbarToggleExternalContent">
@@ -16,6 +20,7 @@ function Nav() {
                       Home
                     </Link>
                   </li>
+
                   <li className="nav-item">
                     <Link className="nav-link text-dark" to="/about">
                       About

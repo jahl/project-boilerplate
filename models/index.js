@@ -2,5 +2,6 @@
 module.exports = {
   Product: require("./product"),
   Supplier: require("./supplier"),
-  Client: require("./client")
+  Client: require("./client"),
+  Order: require("./order"),
 };

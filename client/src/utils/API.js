@@ -43,5 +43,8 @@ export default {
   },
   saveClient: function(clientData) {
     return axios.post("/api/client", clientData);
+  },
+  generateOrder: function(orderData) {
+    return axios.post("/api/order", orderData)
   }
 };
