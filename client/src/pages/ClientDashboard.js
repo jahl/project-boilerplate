@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import NavDash from "./../components/NavDash";
 import API from "../utils/API";
 
 class ClientDashboard extends Component {
@@ -40,8 +40,12 @@ class ClientDashboard extends Component {
           <td>{element.estado}</td>
           <td>{element.telefono}</td>
           <td>{element.correo}</td>
-          <td><input type="checkbox"></input></td>
-          <td><a>Añadir a mi lista</a></td>
+          <td>
+            <input type="checkbox" />
+          </td>
+          <td>
+            <a>Añadir a mi lista</a>
+          </td>
         </tr>
       );
     });
@@ -53,23 +57,30 @@ class ClientDashboard extends Component {
   render() {
     const clientList = this.getExamplesAsList();
     return (
-      <div className="container">
-        <h1>Clientes</h1>
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Nombre de Compañia</th>
-              <th scope="col">Direccion</th>
-              <th scope="col">Estado</th>
-              <th scope="col">Telefono</th>
-              <th scope="col">Correo</th>
-              <th scope="col">Seleccionar</th>
-              <th scope="col">Agregar</th>
-            </tr>
-          </thead>
-          <tbody>{clientList}</tbody>
-        </table>
-      </div>
+      <>
+        <NavDash />
+        <div className="container-fluid ">
+          <div className="row">
+            <main className="p-5 mr-5 col-md-9 col-lg-10 ">
+              <h1>Clientes</h1>
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Nombre de Compañia</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Seleccionar</th>
+                    <th scope="col">Agregar</th>
+                  </tr>
+                </thead>
+                <tbody>{clientList}</tbody>
+              </table>
+            </main>
+          </div>
+        </div>
+      </>
     );
   }
 }
