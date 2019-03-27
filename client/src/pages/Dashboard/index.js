@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import NavDashboard from "./../../components/NavDash"
-import ContDash from "./../../components/ContDash";
-import ProductDashboard from "./../ProductDashboard";
-import ClientDashboard from "./../ClientDashboard";
-//import SupplierDashboard from "./../SupplierDashboard";
-
-
 
 class Dashboard extends Component {
 
