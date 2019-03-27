@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavDash from "./../../components/NavDash";
 import API from "./../../utils/API";
 import "./form.css";
 
@@ -55,109 +56,108 @@ class ProductForm extends Component {
 
     return (
 
-      <div className="container w-100 my-md-5 pl-md-5 my-5">
-        <h1 className=" text-dark text-center display-5 font-weight-bold">New Product</h1>
-        <br />
-        <form onSubmit={this.submitExample}>
-
+      <>
+        <NavDash />
+        <div className="container-fluid ">
           <div className="row">
+            <main className="p-5 mr-5 col-md-9 col-lg-10 ">
 
-            <div className="col-md-12 mb-3">
-              <input className="form-control" name="nombre"
-                type="text" placeholder="Nombre del producto"
-                onChange={this.handleInputChange}
-                value={nombre} />
-            </div>
+              <div className="container w-100 my-md-5 pl-md-5 my-5">
+                <h1 className=" text-dark text-center display-5 font-weight-bold">New Product</h1>
+                <br />
+                <form onSubmit={this.submitExample}>
+
+                  <div className="row">
+
+                    <div className="col-md-12 mb-3">
+                      <input className="form-control" name="nombre"
+                        type="text" placeholder="Nombre del producto"
+                        onChange={this.handleInputChange}
+                        value={nombre} />
+                    </div>
+                  </div>
+
+                  <div className="form-row">
+                    <div className="form-group col-md-6">
+                      <input type="text" className="form-control" name="precio_unitario"
+                        type="text" placeholder="Precio Unitario"
+                        onChange={this.handleInputChange}
+                        value={precio_unitario} />
+                    </div>
+
+                    <div className="form-group col-md-6">
+                      <input
+                        className="form-control "
+                        name="flete"
+                        type="text"
+                        placeholder="Costo por Flete"
+                        onChange={this.handleInputChange}
+                        value={flete} />
+                    </div>
+                  </div>
+
+                  <div className="form-row">
+                    <div className=" col-md-6">
+                      <select className="form-control" name="medida"
+                        type="text" placeholder="Medida"
+                        onChange={this.handleInputChange}
+                        value={medida} placeholder="Medida" >
+                        <option className="text-dark"> Medida  </option >
+                        <option> 3 mm  </option >
+                        <option> 4.5 mm  </option >
+                        <option> 6 mm</option>
+                        <option> 9 mm</option>
+                        <option> 12 mm</option>
+                        <option> 15 mm</option>
+                        <option> 16 mm</option>
+                        <option> 19 mm</option>
+                      </select>
+                    </div>
+
+                    <div className="form-group col-md-6">
+                      <select className="form-control" name="cantidad_disponible"
+                        type="text" onChange={this.handleInputChange} value={cantidad_disponible} placeholder="Cantidad por pieza" >
+                        <option selected>Cantidad</option>
+                        <option>50</option>
+                        <option>100</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div className="form-row">
+                    <div className="form-group col-md-6" >
+                      <input
+                        className="form-control"
+                        name="fecha_agregado"
+                        type="text"
+                        placeholder="Fecha de Agregado del producto"
+                        onChange={this.handleInputChange}
+                        value={fecha_agregado} />
+                    </div>
+
+                    <div className="form-group col-md-6">
+
+                      <input
+                        className="form-control"
+                        name="fecha_entrega"
+                        type="text"
+                        placeholder="Fecha de Entrega (dd/mm/yyyy)"
+                        onChange={this.handleInputChange}
+                        value={fecha_entrega} />
+                    </div>
+                  </div>
+
+                  <div className="text-center">
+                    <button type="submit" className="btn  btn-outline-dark my-4 py-3 h-100 btn-lg">Submit</button>
+                  </div>
+                </form >
+              </div >
+
+            </main>
           </div>
-
-          <div className="form-row">
-            <div className="form-group col-md-6">
-              <input type="text" className="form-control" name="precio_unitario"
-                type="text" placeholder="Precio Unitario"
-                onChange={this.handleInputChange}
-                value={precio_unitario} />
-            </div>
-
-            <div className="form-group col-md-6">
-              <input
-                className="form-control "
-                name="flete"
-                type="text"
-                placeholder="Costo por Flete"
-                onChange={this.handleInputChange}
-                value={flete} />
-            </div>
-          </div>
-
-          <div className="form-row">
-            <div className=" col-md-6">
-              <select className="form-control" name="medida"
-                type="text" placeholder="Medida"
-                onChange={this.handleInputChange}
-                value={medida} placeholder="Medida" >
-                <option className="text-dark"> Medida  </option >
-                <option> 3 mm  </option >
-                <option> 4.5 mm  </option >
-                <option> 6 mm</option>
-                <option> 9 mm</option>
-                <option> 12 mm</option>
-                <option> 15 mm</option>
-                <option> 16 mm</option>
-                <option> 19 mm</option>
-              </select>
-            </div>
-
-            <div className="form-group col-md-6">
-              <select className="form-control" name="cantidad_disponible"
-                type="text" onChange={this.handleInputChange} value={cantidad_disponible} placeholder="Cantidad por pieza" >
-                <option selected>Cantidad</option>
-                <option>50</option>
-                <option>100</option>
-              </select>
-            </div>
-
-          </div>
-
-
-
-
-
-
-
-
-
-          <div className="form-row">
-            <div className="form-group col-md-6" >
-              <input
-                className="form-control"
-                name="fecha_agregado"
-                type="text"
-                placeholder="Fecha de Agregado del producto"
-                onChange={this.handleInputChange}
-                value={fecha_agregado} />
-            </div>
-
-
-            <div className="form-group col-md-6">
-
-              <input
-                className="form-control"
-                name="fecha_entrega"
-                type="text"
-                placeholder="Fecha de Entrega (dd/mm/yyyy)"
-                onChange={this.handleInputChange}
-                value={fecha_entrega} />
-            </div>
-
-          </div>
-
-          <div className="text-center">
-            <button type="submit" className="btn  btn-outline-dark my-4 py-3 h-100 btn-lg">Submit</button>
-          </div>
-        </form >
-
-      </div >
-
+        </div>
+      </>
 
     );
   }

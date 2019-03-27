@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import Sidebar from "./../Sidebar";
 
-//import Modal from "./../Modal"
-//import "./style.css";
 
 class NavDashboard extends Component {
 
@@ -30,7 +28,9 @@ class NavDashboard extends Component {
                         <div className="navbar">
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item">
-                                    <a className=" nav-link js-scroll-trigger text-light" id="dropdownMenuButton" data-toggle="dropdown tooltip" aria-haspopup="true" aria-expanded="false" data-placement="bottom" title="User"><i class=" fa-lg far fa-user" ></i></a>
+                                    <a className=" nav-link js-scroll-trigger text-light" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-placement="bottom" title="User">
+                                        <i className=" fa-lg far fa-user" ></i>
+                                    </a>
 
 
                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -54,31 +54,22 @@ class NavDashboard extends Component {
 
                                     </div>
 
-
-
-
-
                                 </li>
 
                                 <li className="nav-item">
                                     <a className="nav-link js-scroll-trigger text-light" data-toggle="tooltip" data-placement="bottom" title="Add New Product" ><Link className="text-light" to="/newproduct">
-                                        <i class="fas fa-lg fa-plus"></i>                                    </Link></a>
+                                        <i className="fas fa-lg fa-plus"></i>                                    </Link></a>
 
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link js-scroll-trigger text-light" data-toggle="tooltip" data-placement="bottom" title="Sign Out"> <Link className="text-light" to="/contact">
-                                        <i class="  fas fa-lg fa-sign-out-alt"></i>
+                                    <a className="nav-link js-scroll-trigger text-light" data-toggle="tooltip" data-placement="bottom" title="Sign Out"> <Link className="text-light" to="/">
+                                        <i className="  fas fa-lg fa-sign-out-alt"></i>
                                     </Link></a>
 
                                 </li>
                             </ul>
                         </div>
                     </div>
-
-
-
-
-
 
 
 
